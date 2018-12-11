@@ -11,7 +11,8 @@ app.get('/', function(req, res, next) {
 });
 
 app.get('/webhook', function(req,res) {
-  console.log("From Facebook request ",req);
-  console.log("From Facebook ",res);
-  res.send("HELLO");
+  if(req.query['hub.verify_token'] === 'walmart@123')
+    res.send(req.query['hub.challenge']);
+  else
+    res.send("HEYYY FUCK YOU");
 });
