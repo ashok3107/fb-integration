@@ -19,6 +19,7 @@ app.get('/webhook', function(req,res) {
 
 app.post('/webhook', (req, res) => {
   console.log("Entered webhook method");
+  console.log(req);
   console.log(req.body);
   res.send({
     success: true
