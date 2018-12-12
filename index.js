@@ -16,3 +16,11 @@ app.get('/webhook', function(req,res) {
   else
     res.send("HEYYY FUCK YOU");
 });
+
+app.post('/webhook', (req, res) => {
+  console.log("Entered webhook method");
+  console.log(req.body);
+  res.send({
+    success: true
+  });
+});
